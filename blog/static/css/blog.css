@@ -1,0 +1,12 @@
+.card-text {
+    color: black;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.bg-light {
+    background-color: #e6f3ff !important;
+}
+.text-primary{
+    font-family: "DM Serif Text", serif;
+}
