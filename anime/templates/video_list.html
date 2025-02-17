@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Videos</title>
+</head>
+<body>
+    <h1>Anime Video List</h1>
+    {% for video in videos %}
+        <div>
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.description }}</p>
+            <video width="320" height="240" controls>
+                <source src="{{ video.video_file.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% if video.thumbnail %}
+                <img src="{{ video.thumbnail.url }}" alt="{{ video.title }} Thumbnail" width="320">
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No videos are available.</p>
+    {% endfor %}
+</body>
+</html>

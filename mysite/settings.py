@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure--d0zo)5=-$o3s3mddg&vxv#exxa3%0(j(%+!hfon&627rn@tk$"
@@ -18,7 +18,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blog"
+    "blog",
+    "anime"
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,11 @@ USE_TZ = True
 
 STATIC_URL = "blog/static/"
 STATIC_ROOT = BASE_DIR / 'static'
+
+
+# media files
+MEDIA_URL = 'anime/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

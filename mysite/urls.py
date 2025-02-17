@@ -17,10 +17,13 @@ Including another URLconf
 # 在 mysite/urls.py 中
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),  # 这里包含了 blog 应用的 urls
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),  # 或者指向一个视图函数
+    path('anime/', include('anime.urls')),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
